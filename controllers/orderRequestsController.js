@@ -30,7 +30,24 @@ const add_order_requests = async(req,res,next) => {
 
 
 
+const getAll_Order_Requests = async(req,res,next) => {
+
+
+  try{
+    
+    const response = await Orders.find();
+  
+    res.json(response);
+  
+  }
+  catch(e){
+    console.log(e);
+  }
+}
+
+
 module.exports = {
    
-    add_order_requests
+    add_order_requests,
+    getAll_Order_Requests
 }
