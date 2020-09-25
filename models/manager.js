@@ -4,7 +4,9 @@ const Schema = mongoose.Schema;
 const managerSchema = new Schema({
     
     name : {type: String},
-    type : {type:String}
+    password : {type:String},
+    type : {type:String},
+    site : {type:String}
 });
 
 const ManagerData = mongoose.model('manager',managerSchema);

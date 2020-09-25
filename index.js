@@ -3,7 +3,7 @@ const express = require('express');
 
 const testRoutes1 = require('./routes/commiteeRoutes');
 const managerRoutes = require('./routes/ManagerRoutes');
-const testRoutes2 = require('./routes/siteManagerRoutes');
+const siteManagerRoutes = require('./routes/siteManagerRoutes');
 const testRoutes3 = require('./routes/supplierRoutes');
 
 
@@ -20,7 +20,7 @@ app.use(cors());
 
 mongoose.Promise = global.Promise;
 
-const uri = "";      // mongo db url
+const uri = "mongodb+srv://hasitha:9812sliit@cluster0.jcdhk.mongodb.net/Csse?retryWrites=true&w=majority";      // mongo db url
 
 mongoose.connect(uri, { useUnifiedTopology: true   , useFindAndModify: false},()=>{
 
@@ -34,7 +34,7 @@ app.use(express.urlencoded({extended:true}));
 //routes
 
 app.use('/test1',testRoutes1);
-app.use('/test2',testRoutes2);
+app.use('/siteManager',siteManagerRoutes);
 app.use('/test3',testRoutes3);
 app.use('/manager',managerRoutes);
 
