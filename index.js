@@ -5,6 +5,8 @@ const testRoutes1 = require('./routes/commiteeRoutes');
 const managerRoutes = require('./routes/ManagerRoutes');
 const siteManagerRoutes = require('./routes/siteManagerRoutes');
 const testRoutes3 = require('./routes/supplierRoutes');
+const orderRoutes = require('./routes/orderRoutes');
+
 
 
 
@@ -37,6 +39,8 @@ app.use('/test1',testRoutes1);
 app.use('/siteManager',siteManagerRoutes);
 app.use('/test3',testRoutes3);
 app.use('/manager',managerRoutes);
+app.use('/orders',orderRoutes);
+
 
 
 
