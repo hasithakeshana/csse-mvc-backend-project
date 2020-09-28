@@ -25,7 +25,7 @@ const place_order = async(req,res,next) => {
     try{
         const response = await Orders.create(order);
     
-        res.send(JSON.stringify({success:"order created" , msg : response} ));
+        res.json(response);
       }
       catch(e){
         console.log(e);
