@@ -35,8 +35,26 @@ const place_order = async(req,res,next) => {
 
 
 
+const getAll_Orders = async(req,res,next) => {
+
+
+    try{
+      
+      const response = await Orders.find();
+    
+      res.json(response);
+    
+    }
+    catch(e){
+      console.log(e);
+    }
+  }
+
+
+
 module.exports = {
    
-    place_order
+    place_order,
+    getAll_Orders
     
 }
