@@ -8,8 +8,6 @@ const testRoutes3 = require('./routes/supplierRoutes');
 const orderRoutes = require('./routes/orderRoutes');
 import * as constants from './Constants/constants';
 
-
-
 require('dotenv').config();
 
 const mongoose = require('mongoose');
@@ -22,11 +20,11 @@ app.use(cors());
 
 mongoose.Promise = global.Promise;
 
-const uri = constants.MONGO_DB_URL;      // mongo db url
+const uri = "mongodb+srv://hasitha:9812sliit@cluster0.jcdhk.mongodb.net/Csse?retryWrites=true&w=majority";      // mongo db url
 
 mongoose.connect(uri, { useUnifiedTopology: true   , useFindAndModify: false},()=>{
 
-    console.log(constants.DB_CONNECTED_LOG);
+    console.log("");
 });
 
 app.use(express.json());  //  useNewUrlParser: true, useFindAndModify: false
@@ -46,6 +44,6 @@ app.use('/orders',orderRoutes);
 
 app.listen( process.env.PORT || 4000,function(){
 
-    console.log(constants.LISTENING_REQ_LOG);
+    console.log("test");
 });
 
