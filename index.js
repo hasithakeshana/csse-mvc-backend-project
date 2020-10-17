@@ -6,7 +6,7 @@ const managerRoutes = require('./routes/ManagerRoutes');
 const siteManagerRoutes = require('./routes/siteManagerRoutes');
 const testRoutes3 = require('./routes/supplierRoutes');
 const orderRoutes = require('./routes/orderRoutes');
-
+import * as constants from './Constants/constants';
 
 
 
@@ -22,11 +22,11 @@ app.use(cors());
 
 mongoose.Promise = global.Promise;
 
-const uri = "mongodb+srv://hasitha:9812sliit@cluster0.jcdhk.mongodb.net/Csse?retryWrites=true&w=majority";      // mongo db url
+const uri = constants.MONGO_DB_URL;      // mongo db url
 
 mongoose.connect(uri, { useUnifiedTopology: true   , useFindAndModify: false},()=>{
 
-    console.log("DB connected");
+    console.log(constants.DB_CONNECTED_LOG);
 });
 
 app.use(express.json());  //  useNewUrlParser: true, useFindAndModify: false
@@ -46,6 +46,6 @@ app.use('/orders',orderRoutes);
 
 app.listen( process.env.PORT || 4000,function(){
 
-    console.log('now listening for requests');
+    console.log(constants.LISTENING_REQ_LOG);
 });
 
